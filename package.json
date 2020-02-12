@@ -4,7 +4,9 @@
   "description": "copy genieaccount with vuejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
@@ -16,15 +18,15 @@
     "url": "https://github.com/puba5/copy_genieaccount/issues"
   },
   "homepage": "https://github.com/puba5/copy_genieaccount#readme",
-  "dependencies": {
-    "vue": "^2.6.11"
-  },
+  "dependencies": {},
   "devDependencies": {
     "css-loader": "^3.4.2",
-    "vue-loader": "^15.8.3",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.0",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   }
 }
