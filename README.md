@@ -1,7 +1,9 @@
 # copy_genieaccount
+
 copy_genie with vuejs
 
 # vue 프로젝트 세팅
+
 1. npm init
 2. npm i vue
 3. npm i webpack webpack-cli -D
