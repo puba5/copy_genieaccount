@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 class="title">title</h1>
+    <h1 class="title">Genie Account</h1>
     <!--alert of 'out of stock, regular events, production deadline, etc'
         <button class="alert_button" @click="onClick">alert</button>
     -->
-    <div>
+    <div class="inputForm">
       <!--revenue resistration button-->
       <form @submit.prevent="addData">
         <input ref="answer" v-model="inputData" placeholder="data">
@@ -14,7 +14,6 @@
       </form>
     </div>
     <div>
-      표
       <account-component></account-component>
       <!--<stock-component></stock-component>-->
     </div>
@@ -22,7 +21,7 @@
 </template>
 
 <script>
-import AccountComponent from "./AccountComponent.vue";
+import AccountComponent from "./component/AccountComponent";
 export default {
   data() {
     return {
@@ -51,9 +50,13 @@ export default {
 </script>
 <style scoped>
 .title {
-  width: "";
+  width: "200px";
   background: "";
   height: "";
   display: "";
+  text-align: center;
+}
+.inputForm {
+  text-align: center;
 }
 </style>
