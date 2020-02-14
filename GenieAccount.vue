@@ -3,11 +3,13 @@
     <h1 class="title">title</h1>
     <!--alert of 'out of stock, regular events, production deadline, etc'
         <button class="alert_button" @click="onClick">alert</button>
-      -->
+    -->
     <div>
       <!--revenue resistration button-->
       <form @submit.prevent="onsubmitForm">
-        <input ref="answer" v-model="inputData" />
+        <input ref="answer" v-model="inputData" placeholder="data">
+        <input ref="answer" v-model="inputProduct" placeholder="product">
+        <input ref="answer" v-model="inputRevenue" placeholder="revenue">
         <button type="submit">submit</button>
       </form>
     </div>
@@ -20,11 +22,13 @@
 </template>
 
 <script>
-import AccountComponent from './AccountComponent';
+import AccountComponent from "./AccountComponent";
 export default {
   data() {
     return {
-      inputData: ''
+      inputData: "",
+      inputProduct: "",
+      inputRevenue: ""
     };
   },
   methods: {}
@@ -32,9 +36,9 @@ export default {
 </script>
 <style scoped>
 .title {
-  width: '';
-  background: '';
-  height: '';
-  display: '';
+  width: "";
+  background: "";
+  height: "";
+  display: "";
 }
 </style>
