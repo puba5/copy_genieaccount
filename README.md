@@ -13,3 +13,7 @@ copy_genie with vuejs
 7. npm i vue-loader css-loader -D
 8. npm i vue-style-loader -D
 9. webpack.config.js 생성
+
+#
+
+> 데이터는 localStage에 저장하는데, key와 value의 양식에 따라 저장하므로, 여러 데이터를 한 value에 저장할 때, array 양식으로 넣는다. ( 추후 DB를 사용함으로 문제 해결할 예정 )
