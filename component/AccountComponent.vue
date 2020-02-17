@@ -1,50 +1,39 @@
 <template>
   <div>
-    <section>
-      <h2>AccountTable</h2>
-      <table>
-        <caption>
-          AccountTable
-        </caption>
-        <thead>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>date</th>
+          <th>product</th>
+          <th>revenue</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <template v-for="data in inputData">
           <tr>
-            <th>date</th>
-            <!--change 'product' to 'client' OR add a subitem 'client'-->
-            <th>product</th>
-            <th>revenue</th>
+            <td>{{ data.date }}</td>
+            <td>{{ data.product }}</td>
+            <td>{{ data.revenue }}</td>
+            <td><button>delete</button></td>
           </tr>
-        </thead>
-        <tbody>
-          <!--v-for사용할 계획-->
-          <tr>
-            <td>{{ inputData.date }}</td>
-            <td>{{ inputData.product }}</td>
-            <td>{{ inputData.revenue }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+        </template>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
 export default {
   name: 'AccountComponent',
+  props: ['inputString'],
   data() {
     return {
-      inputData: {
-        date: [],
-        product: [],
-        revenue: []
-      }
+      inputData: [(date = ''), (product = ''), (revenue = 0)]
     };
   },
   methods: {
-    bindData() {
-      /*    
-      최상위 컴포넌트에서 props를 통해 내려온 데이터들을 this.inputData에 입력해서 저장된 값들을 화면에 표시되는 값 this.inputData.xxxx에 맞게 바인딩
-      */
-    }
+    bindData() {}
   },
   mounted() {
     this.bindData();
