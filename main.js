@@ -1,4 +1,4 @@
-import Vue from "vue";
-import GenieAccount from "./GenieAccount";
+import Vue from 'vue';
+import GenieAccount from './GenieAccount';
 
-new Vue(GenieAccount).$mount("#root");
+new Vue(GenieAccount).$mount('#root');
