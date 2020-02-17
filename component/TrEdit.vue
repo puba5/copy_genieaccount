@@ -19,7 +19,9 @@ export default {
     return {};
   },
   methods: {
-    deleteRecord() {}
+    deleteValue() {
+      this.$emit('delete-value');
+    }
   }
 };
 </script>

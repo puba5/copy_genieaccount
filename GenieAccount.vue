@@ -28,7 +28,8 @@
         <button class="button" type="submit">submit</button>
       </form>
     </div>
-    <!-- 첫번째 표-->
+
+    <!--content1-->
     <div>
       <table class="table">
         <thead>
@@ -41,7 +42,7 @@
         </thead>
         <tbody>
           <template v-for="value in allValues">
-            <tr-edit :value="value"></tr-edit>
+            <tr-edit :value="value" @delete-value="deleteValue()"></tr-edit>
           </template>
         </tbody>
       </table>
@@ -57,10 +58,10 @@ class array {
 }
 import TrEdit from './component/TrEdit';
 export default {
-  computed: {},
+  computed: { allValues() {} },
   data() {
     return {
-      value: [],
+      values: [],
       inputArray: new array({
         product: '',
         price: '',
@@ -70,12 +71,13 @@ export default {
   },
   methods: {
     addData() {
-      localStorage.setItem(this.product, this.inputArray);
+      localStorage.setItem('this.inputArray', this.inputArray);
+      this.inputArray.create();
     }
   },
 
   components: {
-    TrEdit: TrEdit
+    'tr-edit': TrEdit
   }
 };
 </script>

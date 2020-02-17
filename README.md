@@ -17,3 +17,4 @@ copy_genie with vuejs
 #
 
 > 데이터는 localStage에 저장하는데, key와 value의 양식에 따라 저장하므로, 여러 데이터를 한 value에 저장할 때, array 양식으로 넣는다. ( 추후 DB를 사용함으로 문제 해결할 예정 )
+> 'array' 클래스 생성 (inputArray= new array로 사용) -> 클래스 안의 메서드 create()로 values배열에 현재 inputArray값 push하면 어떨까 -> value 배열을 하위컴포넌트로 전달
