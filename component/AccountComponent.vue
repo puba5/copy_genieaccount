@@ -11,11 +11,13 @@
       </thead>
       <tbody>
         <template v-for="data in inputData">
-          <tr>
+          <tr :key="data">
             <td>{{ data.date }}</td>
             <td>{{ data.product }}</td>
             <td>{{ data.revenue }}</td>
-            <td><button>delete</button></td>
+            <td>
+              <button>delete</button>
+            </td>
           </tr>
         </template>
       </tbody>
@@ -25,11 +27,11 @@
 
 <script>
 export default {
-  name: 'AccountComponent',
-  props: ['inputString'],
+  name: "AccountComponent",
+  props: ["inputString"],
   data() {
     return {
-      inputData: [(date = ''), (product = ''), (revenue = 0)]
+      inputData: [(date = ""), (product = ""), (revenue = 0)]
     };
   },
   methods: {
