@@ -13,7 +13,7 @@
         />
         <input
           class="input"
-          type="number"
+          type="text"
           v-model="value.price"
           placeholder="Price"
           ref="answer"
@@ -29,20 +29,21 @@
       </form>
     </div>
 
-    <!--content1-->
+    <!--table-->
     <div>
       <table class="table">
         <thead>
-          <tr>
+          <tr class="tr">
             <th>상품</th>
             <th>가격</th>
             <th>비고</th>
-            <th></th>
+            <th>edit</th>
           </tr>
         </thead>
         <tbody>
           <template v-for="(record, i) in records">
             <tr-edit
+              class="tr"
               :key="i"
               :record="record"
               @delete-it="deleteRecord(i)"
@@ -98,5 +99,18 @@ export default {
 }
 .inputForm {
   text-align: center;
+}
+.table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.tr {
+  padding: 20px;
+  font-size: 1.3em;
+  background-color: #1d9fe6;
+  border-left: 5px solid #e4e4e4;
+  margin-bottom: 2px;
+  color: #3e5252;
 }
 </style>
