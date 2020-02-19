@@ -7,21 +7,21 @@
         <input
           class="input"
           type="text"
-          v-model="inputArray.product"
+          v-model="value.product"
           placeholder="Product"
           ref="answer"
         />
         <input
           class="input"
           type="text"
-          v-model="inputArray.price"
+          v-model="value.price"
           placeholder="Price"
           ref="answer"
         />
         <input
           class="input"
           type="number"
-          v-model="inputArray.remarks"
+          v-model="value.remarks"
           placeholder="Remarks"
           ref="answer"
         />
@@ -41,8 +41,8 @@
           </tr>
         </thead>
         <tbody>
-          <template v-for="value in allValues">
-            <tr-edit :value="value" @delete-value="deleteValue()"></tr-edit>
+          <template v-for="record in records">
+            <tr-edit :record="record" @delete-record="deleteRecord()"></tr-edit>
           </template>
         </tbody>
       </table>
@@ -51,34 +51,30 @@
 </template>
 
 <script>
-class array {
-  constructor() {}
-  data() {}
-  create() {}
-}
 import TrEdit from './component/TrEdit';
 export default {
-  computed: { allValues() {} },
+  computed: { allRecords() {} },
   data() {
     return {
-      values: [],
-      inputArray: new array({
+      records: [],
+      value: {
         product: '',
         price: '',
-        remarks: ''
-      })
+        remarks: '',
+      },
     };
   },
   methods: {
     addData() {
-      localStorage.setItem('this.inputArray', this.inputArray);
-      this.inputArray.create();
-    }
+      console.log('addData실행전');
+      //records.push(value);
+      this.records = [...this.records, { ...this.value }];
+    },
   },
 
   components: {
-    'tr-edit': TrEdit
-  }
+    'tr-edit': TrEdit,
+  },
 };
 </script>
 <style scoped>
