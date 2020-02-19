@@ -1,11 +1,14 @@
 <template>
   <div>
     <tr>
-      <td>{{ value.product }}</td>
-      <td>{{ value.price }}</td>
-      <td>{{ value.remarks }}</td>
+      <td>{{ record.product }}</td>
+      <td>{{ record.price }}</td>
+      <td>{{ record.remarks }}</td>
       <td>
-        <button class="delete-button" @click="deleteValue">delete</button>
+        <button class="delete-button" @click="deleteIt">delete</button>
+      </td>
+      <td>
+        <button class="edit-button" @click="editIt">edit</button>
       </td>
     </tr>
   </div>
@@ -14,15 +17,18 @@
 <script>
 export default {
   name: 'TrEdit',
-  props: ['value'],
+  props: ['record'],
   data() {
     return {};
   },
   methods: {
-    deleteValue() {
-      this.$emit('delete-value');
-    }
-  }
+    deleteIt: function() {
+      this.$emit('delete-it');
+    },
+    editIt: function() {
+      this.$emit('edit-it');
+    },
+  },
 };
 </script>
 <style scoped></style>
