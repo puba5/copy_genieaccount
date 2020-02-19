@@ -18,4 +18,4 @@ copy_genie with vuejs
 
 > 데이터는 localStage에 저장하는데, key와 value의 양식에 따라 저장하므로, 여러 데이터를 한 value에 저장할 때, array 양식으로 넣는다. ( 추후 DB를 사용함으로 문제 해결할 예정 )
 
-push로 입력 받은 객체를 배열에 저장하기, filter로 나중에 수정(edit mode) 하기
+edit button 구현하기

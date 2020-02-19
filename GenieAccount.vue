@@ -13,14 +13,14 @@
         />
         <input
           class="input"
-          type="text"
+          type="number"
           v-model="value.price"
           placeholder="Price"
           ref="answer"
         />
         <input
           class="input"
-          type="number"
+          type="text"
           v-model="value.remarks"
           placeholder="Remarks"
           ref="answer"
@@ -41,8 +41,13 @@
           </tr>
         </thead>
         <tbody>
-          <template v-for="record in records">
-            <tr-edit :record="record" @delete-record="deleteRecord()"></tr-edit>
+          <template v-for="(record, i) in records">
+            <tr-edit
+              :key="i"
+              :record="record"
+              @delete-it="deleteRecord(i)"
+              @edit-it="editRecord(i)"
+            ></tr-edit>
           </template>
         </tbody>
       </table>
@@ -66,10 +71,13 @@ export default {
   },
   methods: {
     addData() {
-      console.log('addData실행전');
-      //records.push(value);
-      this.records = [...this.records, { ...this.value }];
+      //console.log('addData실행전');
+      this.records.unshift({ ...this.value });
     },
+    deleteRecord(i) {
+      this.records.splice(i, 1);
+    },
+    editRecord() {},
   },
 
   components: {
