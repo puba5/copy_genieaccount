@@ -32,18 +32,19 @@
     <!--table-->
     <div>
       <table class="table">
-        <thead>
-          <tr class="tr">
+        <thead class="tr-head">
+          <tr>
+            <th>시간</th>
             <th>상품</th>
             <th>가격</th>
             <th>비고</th>
             <th>edit</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="tr-body">
           <template v-for="(record, i) in records">
             <tr-edit
-              class="tr"
+              class="tr-eli"
               :key="i"
               :record="record"
               @delete-it="deleteRecord(i)"
@@ -104,12 +105,21 @@ export default {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  table-layout: fixed;
+  word-break: break-all;
+  width: 600px;
 }
-.tr {
+.tr-head {
   padding: 20px;
   font-size: 1.3em;
   background-color: #1d9fe6;
-  border-left: 5px solid #e4e4e4;
+  margin-bottom: 2px;
+  color: #3e5252;
+}
+.tr-body {
+  padding: 20px;
+  font-size: 1.3em;
+  background-color: #aa20816e;
   margin-bottom: 2px;
   color: #3e5252;
 }
